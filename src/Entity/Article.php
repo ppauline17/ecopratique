@@ -20,7 +20,7 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type : 'text')]
     private ?string $contenu = null;
 
     public function getId(): ?int
