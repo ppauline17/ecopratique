@@ -3,11 +3,13 @@
 {% block title %}Modification d'Article{% endblock %}
 
 {% block body %}
-    <h1>Modification d'Article</h1>
+    <section class="edit">
+        <h1>Modification d'Article</h1>
 
-    {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
+        {{ include('article/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_article_index') }}" class="btn btn-primary">Retour à la liste</a>
+        <a href="{{ path('app_article_index') }}" class="btn btn-primary">Retour à la liste</a>
 
-    {{ include('article/_delete_form.html.twig') }}
+        {{ include('article/_delete_form.html.twig') }}
+    </section>
 {% endblock %}

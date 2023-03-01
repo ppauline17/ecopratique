@@ -14,7 +14,7 @@
                         <h5 class="card-title">{{ article.titre }}</h5>
                         <p class="card-text">{{ article.contenu|slice(0,200) }}...</p>
                         <p>Publié le {{ article.datePublication ? article.datePublication|date('d/m/Y') : '' }}</p>
-                        <a href="{{ path('app_article_show', {id:article.id}) }}" class="btn btn-success">Voir l'article</a>
+                        <a href="{{ path('app_article_show', {id:article.id}) }}" class="btn btn-success">Lire l'article</a>
                     </div>
                 </div>
             </div>
