@@ -1,0 +1,6 @@
+RewriteEngine On
+
+ErrorDocument 404 http://localhost/ecopratique/404.html
+
+RewriteRule ^accueil$ http://localhost/ecopratique/index.php
+RewriteRule ^article/([0-9]+)$ afficher_article.php?id_article=$1
