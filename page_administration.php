@@ -19,6 +19,7 @@ $articles = $req->fetchAll();
         header("location:index.php");
     } else {
     ?>
+    <section class="mt-5 pt-5">
         <div class="container">
             <h3>Mes articles</h3>
             <div class="row">
@@ -156,6 +157,7 @@ $articles = $req->fetchAll();
                     </tbody>
                 </table>
                 </div>
+    </section>
     <?php
     }
     ?>
