@@ -2,10 +2,10 @@
 // on récupère le pseudo de la personne connectée
 if (!empty($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
-    $select = "SELECT login FROM users WHERE user_id=$user_id";
+    $select = "SELECT firstname FROM users WHERE user_id=$user_id";
     $infos = $db->query($select);
     $result = $infos->fetch(PDO::FETCH_ASSOC);
-    $login = $result['login'];
+    $firstname = $result['firstname'];
 }
 
 ?>
@@ -30,14 +30,14 @@ if (!empty($_SESSION['user_id'])) {
                 if (empty($_SESSION['user_id'])) {
             ?>
                 <span class="navbar-text">
-                    <a class="btn btn-outline-secondary" href="page_connect.php" title="Se connecter">Connexion</a>
+                    <a class="btn btn-green" href="page_connect.php" title="Se connecter">Connexion</a>
                 </span>
             <?php
                 }else{
             ?>
                 <span class="navbar-text dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?=$login?>
+                        <?=$firstname?>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="page_administration.php">

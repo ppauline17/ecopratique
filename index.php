@@ -104,8 +104,10 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </section>  
-<section class="parallax"></section>
-<section class="pt-5 pb-5">
+<?php
+    if (empty($_SESSION['user_id'])) {
+?>
+<section class="pb-5 mb-5">
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
@@ -119,6 +121,10 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </section>
+<?php
+    }
+?>
+<section class="parallax"></section>
 <?php require_once("_footer.php"); ?>
 
 </body>

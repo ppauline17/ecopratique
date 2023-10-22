@@ -25,42 +25,42 @@ $articles = $req->fetchAll();
             <div class="row">
                 <div class="col-md-3">
                     <!-- bouton Créer article -->
-                    <button class="btn btn-outline-secondary mb-3" data-bs-toggle="modal" data-bs-target="#modalCreate" title="Créer un article">
+                    <button class="btn btn-green mb-3" data-bs-toggle="modal" data-bs-target="#modalCreate" title="Créer un article">
                         <?php require("icons/plus.php"); ?>
                         Créer un article
                     </button>
 
                     <!-- Modal créer article -->
                     <div class="modal fade" id="modalCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Créer un article</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="tt_creer_article.php" method="post" onsubmit="return requiredInput()">
-                                        <div class="mb-3">
-                                            <label for="title">Titre<sup>*</sup></label>
-                                            <input type="text" class="form-control required-input" name="title" id="title">
-                                            <div class="text-danger d-none">Champ obligatoire</div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="content">Contenu<sup>*</sup></label>
-                                            <textarea name="content" class="form-control required-input" id="content" cols="30" rows="10"></textarea>
-                                            <div class="text-danger d-none">Champ obligatoire</div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <input type="submit" class="btn btn-light" value="Valider">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
-                                </div>
-                                </div>
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Créer un article</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="tt_creer_article.php" method="post" onsubmit="return requiredInput()">
+                                    <div class="mb-3">
+                                        <label for="title">Titre<sup>*</sup></label>
+                                        <input type="text" class="form-control required-input" name="title" id="title">
+                                        <div class="text-danger d-none">Champ obligatoire</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="content">Contenu<sup>*</sup></label>
+                                        <textarea name="content" class="form-control required-input" id="content" cols="30" rows="10"></textarea>
+                                        <div class="text-danger d-none">Champ obligatoire</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="submit" class="btn btn-green" value="Valider">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+                            </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -82,24 +82,22 @@ $articles = $req->fetchAll();
                             <th><a href="page_modifier_article.php?id_article=<?=$article['article_id']?>" class="nav-link"><?= $article['title'] ?></a></th>
                             <td><?= substr($article['content'], 0, 50)." ..." ?></td>
                             <td>
-                                <p><?= $article['login']?></p>
+                                <p><?= $article['firstname']?></p>
                                 <p><?= $article['created_date'] ?></p>
                             </td>
                             <td>
                                 <!-- bouton voir -->
-                                <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalVoir<?=$article['article_id']?>" title="Voir l'article">
+                                <button class="btn btn-green mb-2" data-bs-toggle="modal" data-bs-target="#modalVoir<?=$article['article_id']?>" title="Voir <?=$article['title']?>">
                                     <?php require("icons/eye.php"); ?>
                                 </button>
                                 <!-- bouton modifier -->
-                                <button class="btn btn-outline-warning mb-2" data-bs-toggle="modal" data-bs-target="#modalUpdate<?=$article['article_id']?>" title="Voir l'article">
+                                <button class="btn btn-outline-warning mb-2" data-bs-toggle="modal" data-bs-target="#modalUpdate<?=$article['article_id']?>" title="Modifier <?=$article['title']?>">
                                     <?php require("icons/update.php"); ?>
                                 </button>
                                 <!-- bouton supprimer -->
-                                <a href="tt_delete_article.php?article_id=<?= $article['article_id'] ?>" title="Supprimer <?=$article['title']?>">
-                                    <button class="btn btn-outline-danger mb-2">
-                                        <?php require("icons/delete.php"); ?>
-                                    </button>
-                                </a>
+                                <button class="btn btn-outline-danger mb-2" data-bs-toggle="modal" data-bs-target="#modalDelete<?=$article['article_id']?>" title="Supprimer <?=$article['title']?>">
+                                    <?php require("icons/delete.php"); ?>
+                                </button>
                             </td>
                         </tr>
 
@@ -142,11 +140,30 @@ $articles = $req->fetchAll();
                                         <div class="error" id="error_description"></div>
                                     </div>
                                     <input type="hidden" name="article_id" value="<?=$article['article_id']?>">
-                                    <input type="submit" class="btn btn-outline-success" value="Valider">
+                                    <input type="submit" class="btn btn-green" value="Valider">
                                 </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Retour</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Supprimer -->
+                        <div class="modal fade" id="modalDelete<?=$article['article_id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer <?= $article['title'] ?></h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Etes vous certain(e) de vouloir supprimer <?= $article['title'] ?> ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+                                    <a href="tt_delete_article.php?article_id=<?=$article['article_id']?>"><button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Supprimer</button></a>
                                 </div>
                                 </div>
                             </div>

@@ -104,3 +104,35 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
+/* bouton vert */
+.btn-green{
+    background-color: #edf7f1;
+    border: #edf7f1;
+    color: #3A4A40;
+}
+.btn-green:hover{
+    background-color: #3A4A40;
+    border: #3A4A40;
+    color: #edf7f1 !important;
+}
+.btn-green:hover svg{
+    fill: #edf7f1;
+}
+/* bouton contour warning */
+.btn-outline-warning svg{
+    fill: #ffc107;
+}
+.btn-outline-warning:hover svg{
+    fill: black;
+}
+/* bouton contour danger */
+.btn-outline-danger svg{
+    fill: #dc3545;
+}
+.btn-outline-danger:hover svg{
+    fill: black;
+}
+
+.underline-hover:hover{
+    text-decoration: underline;
+}
