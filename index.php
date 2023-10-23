@@ -16,7 +16,7 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
                 <h2>OF OUR <span class="bold-text">PLANET</span></h2>
             </div>
             <div class="col-md-4">
-                <img class="rounded-5 img-tree shadow" src="img/tree.jpg" alt="">
+                <img class="rounded-5 img-tree shadow" src="img/tree.webp" alt="">
             </div>
         </div>
     </div>

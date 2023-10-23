@@ -2,10 +2,10 @@
 require_once("_header.php");
 
 if ($_SESSION['user_role'] == "admin") {
-    $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users");
+    $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users ORDER BY article_id DESC ");
 } else if ($_SESSION['user_role'] == "editeur") {
     $user_id = $_SESSION['user_id'];
-    $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users WHERE user_id=$user_id");
+    $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users WHERE user_id=$user_id ORDER BY article_id DESC ");
 }
 $response = $req->execute();
 $articles = $req->fetchAll();
@@ -64,7 +64,7 @@ $pictures = [
                                                 $firstPicture = true;
                                                 foreach ($pictures as $picture){
                                             ?>
-                                            <div class="col-md-3">
+                                            <div class="col-3">
                                                 <input type="radio" class="btn-check" value="<?=$picture['src']?>" name="picture" id="<?=$picture['name']?>" autocomplete="off" <?php if($firstPicture){ echo 'checked'; $firstPicture = false; } ?>>
                                                 <label class="btn" for="<?=$picture['name']?>">
                                                     <img src="<?=$picture['src']?>" alt="" class="img-fluid">
@@ -178,7 +178,7 @@ $pictures = [
                                                     foreach ($pictures as $picture){
                                                         $checked = $picture['src'] === $article['picture'] ? 'checked' : '';
                                                 ?>
-                                                 <div class="col-md-3">
+                                                 <div class="col-3">
                                                     <input type="radio" class="btn-check" value="<?=$picture['src']?>" name="picture" id="update-<?=$picture['name']?>-<?=$article['article_id']?>" autocomplete="off" <?=$checked?>>
                                                     <label class="btn" for="update-<?=$picture['name']?>-<?=$article['article_id']?>">
                                                         <img src="<?=$picture['src']?>" alt="" class="img-fluid">
