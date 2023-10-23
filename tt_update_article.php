@@ -7,5 +7,5 @@
 
     $update="UPDATE articles SET title='$title',content='$content' WHERE article_id='$article_id'";
     $repUpdate=$db->query($update);
-    header("Location:page_administration.php");
+    header("Location:./monespace");
 ?>

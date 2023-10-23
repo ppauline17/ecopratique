@@ -57,7 +57,7 @@ require_once("_header.php");
                 <!-- buton valider -->
                 <button class="btn btn-green mb-3" onclick="checkForm()" id="submit-btn">Valider</button>
                 <!-- bouton connecter -->
-                <a href="page_connect.php" class="d-none" id="connect-btn"><button class="btn btn-green">Se connecter</button></a>
+                <a href="./connexion" class="d-none" id="connect-btn"><button class="btn btn-green">Se connecter</button></a>
             </div>
         </div>
     </div>

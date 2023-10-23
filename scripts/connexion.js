@@ -24,7 +24,7 @@ function connexion() {
                 const reponse = JSON.parse(xhr.responseText);
                 // Si la connexion a réussi
                 if (reponse.message == "Connexion réussie") {
-                    document.location.href = "page_administration.php";
+                    document.location.href = "./monespace";
                 } else if (reponse.message == "Echec de connexion") {
                     message.classList.remove("d-none");
                 }

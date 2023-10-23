@@ -32,7 +32,7 @@ require_once("_header.php");
             </div>
         </div>
         <div class="col-md-4 offset-md-4">
-            <p class="text-center">Nouveau ici ? <a href="page_create_account.php" class="nav-link bold-text d-inline underline-hover">Inscrivez vous</a></p>
+            <p class="text-center">Nouveau ici ? <a href="./inscription" class="nav-link bold-text d-inline underline-hover">Inscrivez vous</a></p>
         </div>
     </div>
 </section>

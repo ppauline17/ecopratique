@@ -3,7 +3,7 @@
     require_once("db_connect.php");
 
     if(empty($_SESSION['user_id'])){
-        header("location:index.php"); 
+        header("location:./accueil"); 
     }else{
         $sql="UPDATE users SET firstname=:firstname, email=:email WHERE user_id=:user_id";
         $insert=$db->prepare($sql);
@@ -12,6 +12,6 @@
         $insert->bindValue('user_id', $_POST['user_id'], PDO::PARAM_INT);
         $insert->execute();
 
-        header("location: page_account.php");
+        header("location: ./compte");
     }
 ?>

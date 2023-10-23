@@ -3,7 +3,7 @@ session_start();
 require_once("db_connect.php");
 
 if(empty($_SESSION['user_id'])){
-    header("location:index.php"); 
+    header("location:./accueil"); 
 }else{
     $created_date = date("d/m/Y");
     $insert=$db->prepare("INSERT INTO articles (title, content, created_date, user_id) VALUES (:title, :content, :created_date, :user_id)");
@@ -12,5 +12,5 @@ if(empty($_SESSION['user_id'])){
     $insert->bindValue('created_date', $created_date, PDO::PARAM_STR);
     $insert->bindValue('user_id', $_SESSION['user_id'], PDO::PARAM_INT);
     $insert->execute();
-    header("location:page_administration.php");
+    header("location:./monespace");
 }

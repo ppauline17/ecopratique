@@ -11,7 +11,7 @@ $response = $req->execute();
 $articles = $req->fetchAll();
 
 if (empty($_SESSION['user_id'])) {
-    header("location:index.php");
+    header("location:./accueil");
 } else {
 ?>
     <section class="mt-5 pt-5">

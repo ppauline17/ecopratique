@@ -32,7 +32,7 @@ function createAccount() {
                     document.querySelectorAll(".required-input").forEach((input)=>{
                         input.classList.add("d-none");
                     })
-                    // document.location.href = "page_administration.php";
+                    // document.location.href = "./monespace";
                 } else if (reponse.message == "L'adresse email saisie est déjà utilisée") {
                     errorMessage.classList.remove('d-none');
                     errorMessage.textContent = reponse.message

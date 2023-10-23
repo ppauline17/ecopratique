@@ -113,7 +113,7 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
                 <div class="card border-0 bg-green p-5">
                     <div class="card-body">
                         <h5 class="card-title mb-5">Vous souhaitez publier ?</h5>
-                        <a href="page_connect.php" class="btn btn-outline-secondary">CONNECTEZ VOUS</a>
+                        <a href="./connexion" class="btn btn-outline-secondary">CONNECTEZ VOUS</a>
                     </div>
                 </div>
             </div>

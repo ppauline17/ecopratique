@@ -16,7 +16,7 @@ if (!empty($_SESSION['user_id'])) {
     <div class="container">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="./accueil">
                     ECO PRATIQUE
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,14 +25,14 @@ if (!empty($_SESSION['user_id'])) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
+                        <a class="nav-link active" aria-current="page" href="./accueil">Accueil</a>
                     </li>
                 </ul>
             <?php
                 if (empty($_SESSION['user_id'])) {
             ?>
                 <span class="navbar-text">
-                    <a class="btn btn-green" href="page_connect.php" title="Se connecter">Connexion</a>
+                    <a class="btn btn-green" href="./connexion" title="Se connecter">Connexion</a>
                 </span>
             <?php
                 }else{
@@ -42,11 +42,11 @@ if (!empty($_SESSION['user_id'])) {
                         <?=$firstname?>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="page_administration.php">
+                        <li><a class="dropdown-item" href="./monespace">
                             <?php require('icons/articles.php') ?>
                             Articles
                         </a></li>
-                        <li><a class="dropdown-item" href="page_account.php">
+                        <li><a class="dropdown-item" href="./compte">
                             <?php require('icons/profil.php') ?>
                             Profil
                         </a><li>

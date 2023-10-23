@@ -1,6 +1,9 @@
 RewriteEngine On
 
-ErrorDocument 404 http://localhost/ecopratique/404.html
+ErrorDocument 404 https://ppasquier.alwaysdata.net/ecopratique/404.php
 
-RewriteRule ^accueil$ http://localhost/ecopratique/index.php
-RewriteRule ^article/([0-9]+)$ afficher_article.php?id_article=$1
+RewriteRule ^accueil$ ./index.php
+RewriteRule ^monespace$ ./page_administration.php
+RewriteRule ^compte$ ./page_account.php
+RewriteRule ^connexion$ ./page_connect.php
+RewriteRule ^inscription$ ./page_create_account.php

@@ -2,7 +2,7 @@
     require_once("_header.php");
 
     if (empty($_SESSION['user_id'])) {
-        header("location:index.php");
+        header("location:./accueil");
     } else {
         $req=$db->prepare("SELECT * FROM users WHERE user_id = :user_id");
         $req->bindValue('user_id', $_SESSION['user_id'], PDO::PARAM_STR);
@@ -140,7 +140,7 @@
             </div>
         </div>
     </div>
-    
+
 <script src="scripts/requiredInput.js"></script>
 <script src="scripts/changePasswordVisibility.js"></script>
 <script src="scripts/isValidEmail.js"></script>
