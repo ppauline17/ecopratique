@@ -1,4 +1,6 @@
 <?php
+require_once('_head.php');
+
 // on récupère le pseudo de la personne connectée
 if (!empty($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
@@ -44,7 +46,7 @@ if (!empty($_SESSION['user_id'])) {
                             <?php require('icons/articles.php') ?>
                             Articles
                         </a></li>
-                        <li><a class="dropdown-item" href="">
+                        <li><a class="dropdown-item" href="page_account.php">
                             <?php require('icons/profil.php') ?>
                             Profil
                         </a><li>

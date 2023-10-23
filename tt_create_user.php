@@ -26,10 +26,12 @@
                 // hash du password
                 $password_hash=password_hash($password, PASSWORD_BCRYPT);
                 // requete sql
-                $insert=$db->prepare("INSERT INTO users (firstname, email, password) VALUES (:firstname, :email, :password)");
+                $insert=$db->prepare("INSERT INTO users (firstname, email, password, role, user_created_date) VALUES (:firstname, :email, :password, :role, :user_created_date)");
                 $insert->bindValue('firstname', $firstname, PDO::PARAM_STR);
                 $insert->bindValue('email', $email, PDO::PARAM_STR);
                 $insert->bindValue('password', $password_hash, PDO::PARAM_STR);
+                $insert->bindValue('role', 'editeur', PDO::PARAM_STR);
+                $insert->bindValue('user_created_date', date('d/m/Y'), PDO::PARAM_STR);
                 $insert->execute();
                 // message de réponse
                 $reponse = [

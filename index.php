@@ -1,5 +1,5 @@
 <?php
-require_once("_head.php");
+require_once("_header.php");
 // on récupère les informations des 6 derniers articles présents dans la base de donnée
 $sql = "SELECT * FROM articles NATURAL JOIN users ORDER BY article_id DESC LIMIT 6";
 $req = $db->prepare($sql);
@@ -8,8 +8,6 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<body>
-    <?php require_once("_menu.php"); ?>
 <section class="bg-img pt-5 pb-5 mb-5 mt-5">
     <div class="container">
         <div class="row mb-5">
@@ -34,6 +32,7 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
             <?php
             $card = 1;
             foreach ($articles as $article) {
+                $content = strlen($article['content']) >= 125 ? substr($article['content'], 0, 125)." ..." : $article['content'];
                 switch ($card) {
                     case 1:
                         $bg_color = "bg-white";
@@ -73,7 +72,7 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col-md-8">
                             <div class="card-body p-4">
                                 <h5 class="card-title"><?= $article['title'] ?></h5>
-                                <p class="card-text"><?= substr($article['content'], 0, 125) ?></p>
+                                <p class="card-text"><?= $content ?></p>
                                 <p class="card-text"><small class="text-body-secondary">Publié le <?= $article['created_date'] ?></small></p>
                                 <button class="btn btn-outline-secondary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#modalVoir<?=$article['article_id']?>" title="Voir l'article">Lire</button>
                             </div>
@@ -126,5 +125,3 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <section class="parallax"></section>
 <?php require_once("_footer.php"); ?>
-
-</body>

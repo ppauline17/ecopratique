@@ -1,6 +1,5 @@
 <?php
-require_once("_head.php");
-require_once("_menu.php");
+require_once("_header.php");
 ?>
 <section class="bg-img vh-100 mt-5 pt-5">
     <div class="container">

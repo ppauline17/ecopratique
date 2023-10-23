@@ -1,6 +1,5 @@
 <?php
-require_once("_head.php");
-require_once("_menu.php");
+require_once("_header.php");
 ?>
 <section class="bg-img vh-100 mt-5 pt-5">
     <div class="container">
@@ -21,7 +20,8 @@ require_once("_menu.php");
                         <input type="email" class="form-control" id="email" placeholder="email@email.fr">
                         <label for="email">Email</label>
                     </div>
-                    <div class="text-danger d-none error-message" id="email-error"></div>
+                    <div class="text-danger d-none error-message"></div>
+                    <div class="text-danger d-none" id="email-error"></div>
                 </div>
                 <!-- password -->
                 <div class="mb-3 required-input">
