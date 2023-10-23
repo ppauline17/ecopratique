@@ -6,11 +6,11 @@
         header("location:./accueil"); 
     }else{
         $sql="UPDATE users SET firstname=:firstname, email=:email WHERE user_id=:user_id";
-        $insert=$db->prepare($sql);
-        $insert->bindValue('firstname', $_POST['firstname'], PDO::PARAM_STR);
-        $insert->bindValue('email', $_POST['email'], PDO::PARAM_STR);
-        $insert->bindValue('user_id', $_POST['user_id'], PDO::PARAM_INT);
-        $insert->execute();
+        $update=$db->prepare($sql);
+        $update->bindValue('firstname', $_POST['firstname'], PDO::PARAM_STR);
+        $update->bindValue('email', $_POST['email'], PDO::PARAM_STR);
+        $update->bindValue('user_id', $_POST['user_id'], PDO::PARAM_INT);
+        $update->execute();
 
         header("location: ./compte");
     }

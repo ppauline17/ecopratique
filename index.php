@@ -67,7 +67,7 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
                 <div class="card border-0 shadow">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="img/tree.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
+                            <img src="<?= $article['picture'] ?>" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body p-4">

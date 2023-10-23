@@ -1,11 +1,13 @@
 <?php
     require_once("_head.php");
     
-    $title=$_POST['title'];
-    $content=$_POST['content'];
-    $article_id=$_POST['article_id'];
+    $sql="UPDATE articles SET picture=:picture, title=:title, content=:content WHERE article_id=:article_id";
+    $update=$db->prepare($sql);
+    $update->bindValue('picture', $_POST['picture'], PDO::PARAM_STR);
+    $update->bindValue('title', $_POST['title'], PDO::PARAM_STR);
+    $update->bindValue('content', $_POST['content'], PDO::PARAM_STR);
+    $update->bindValue('article_id', $_POST['article_id'], PDO::PARAM_INT);
+    $update->execute();
 
-    $update="UPDATE articles SET title='$title',content='$content' WHERE article_id='$article_id'";
-    $repUpdate=$db->query($update);
     header("Location:./monespace");
 ?>

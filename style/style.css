@@ -1,10 +1,4 @@
 @font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: url(../font/Montserrat-Thin.ttf);
-    font-weight: 100;
-    font-style: normal;
-}
-@font-face {
     font-family: 'Rajdhani', sans-serif;
     src: url(../font/Rajdhani-Light.ttf);
     font-weight: 300;
@@ -98,7 +92,7 @@ body{
 
 .parallax{
     height: 500px;
-    background-image: url("../img/environment.jpg");
+    background-image: url("../img/environment.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
