@@ -8,8 +8,8 @@
         $donneesJson = file_get_contents('php://input');
         // // // on décode les données
         $donnees = json_decode($donneesJson);
-        $old_password = $donnees->oldPassword;
-        $new_password = $donnees->newPassword;
+        $old_password = htmlspecialchars($donnees->old_password, ENT_QUOTES, 'UTF-8');
+        $new_password = htmlspecialchars($donnees->new_password, ENT_QUOTES, 'UTF-8');
         $user_id = $donnees->userId;
 
         // requete select pour récupérer le mot de passe hashé dans la db

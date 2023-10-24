@@ -49,7 +49,7 @@ if (empty($_SESSION['user_id'])) {
                                         <!-- Title -->
                                         <div class="mb-3 required-input">
                                             <label for="title">Titre<sup>*</sup></label>
-                                            <input type="text" class="form-control" name="title" id="title">
+                                            <input type="text" class="form-control" name="title" id="title" maxlength="50">
                                             <div class="text-danger d-none error-message">Champ obligatoire</div>
                                         </div>
                                         <!-- Content -->
@@ -163,7 +163,7 @@ if (empty($_SESSION['user_id'])) {
                                             <!-- Title -->
                                             <div class="mb-3 required-input-2">
                                                 <label for="update-title-<?=$article['article_id']?>" class="form-label">Titre<sup>*</sup></label>
-                                                <input type="text" class="form-control" name="title" value="<?=$article['title']?>" id="update-title-<?=$article['article_id']?>">
+                                                <input type="text" class="form-control" name="title" value="<?=$article['title']?>" id="update-title-<?=$article['article_id']?>" maxlength="50">
                                                 <div class="text-danger d-none error-message">Champ obligatoire</div>
                                             </div>
                                             <!-- Content -->

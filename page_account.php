@@ -44,13 +44,13 @@
                         <!-- Firstname -->
                         <div class="mb-3 required-input">
                             <label for="update-firstname" class="form-label">Prénom<sup>*</sup></label>
-                            <input type="text" class="form-control" name="firstname" value="<?=$user['firstname']?>" id="update-firstname">
+                            <input type="text" class="form-control" name="firstname" value="<?=$user['firstname']?>" id="update-firstname" maxlength="15">
                             <div class="text-danger d-none error-message">Champ obligatoire</div>
                         </div>
                         <!-- Email -->
                         <div class="mb-3 required-input">
                             <label for="update-email" class="form-label">Email <sup>*</sup></label>
-                            <input type="text" class="form-control" name="email" value="<?=$user['email']?>" id="email">
+                            <input type="text" class="form-control" name="email" value="<?=$user['email']?>" id="email" maxlength="320">
                             <div class="text-danger d-none error-message"></div>
                             <div class="text-danger d-none" id="email-error"></div>
                         </div>

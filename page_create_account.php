@@ -9,7 +9,7 @@ require_once("_header.php");
                 <!-- prénom -->
                 <div class="mb-3 required-input">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="firstname" placeholder="Prénom">
+                        <input type="text" class="form-control" id="firstname" placeholder="Prénom" maxlength="15">
                         <label for="firstname">Prénom</label>
                     </div>
                     <div class="text-danger d-none error-message"></div>
@@ -17,7 +17,7 @@ require_once("_header.php");
                 <!-- email -->
                 <div class="mb-3 required-input">
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="email@email.fr">
+                        <input type="email" class="form-control" id="email" placeholder="email@email.fr" maxlength="320">
                         <label for="email">Email</label>
                     </div>
                     <div class="text-danger d-none error-message"></div>

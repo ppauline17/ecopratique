@@ -6,9 +6,10 @@
         $donneesJson = file_get_contents('php://input');
         // on décode les données
         $donnees = json_decode($donneesJson);
-        $firstname = $donnees->firstname;
-        $email = $donnees->email;
-        $password = $donnees->password;
+        // on filtre les données saisies par l'utilisateur
+        $firstname = htmlspecialchars($donnees->firstname, ENT_QUOTES, 'UTF-8');
+        $email = htmlspecialchars($donnees->email, ENT_QUOTES, 'UTF-8');
+        $password = htmlspecialchars($donnees->password, ENT_QUOTES, 'UTF-8');
         
         // requete select pour savoir si l'email saisi correspond à un utililsateur présent dans la db
         $sql_select = "SELECT * FROM users WHERE email = :email";
