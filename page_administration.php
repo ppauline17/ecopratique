@@ -1,28 +1,29 @@
 <?php
 require_once("_header.php");
 
-if ($_SESSION['user_role'] == "admin") {
-    $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users ORDER BY article_id DESC ");
-} else if ($_SESSION['user_role'] == "editeur") {
-    $user_id = $_SESSION['user_id'];
-    $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users WHERE user_id=$user_id ORDER BY article_id DESC ");
-}
-$response = $req->execute();
-$articles = $req->fetchAll();
-
 if (empty($_SESSION['user_id'])) {
     header("location:./accueil");
 } else {
 
-$pictures = [
-    ['name' => 'tree', 'src' => 'img/tree.webp'],
-    ['name' => 'drop-of-water', 'src' => 'img/drop-of-water.webp'],
-    ['name' => 'leaf', 'src' => 'img/leaf.webp'],
-    ['name' => 'lightbulb', 'src' => 'img/lightbulb.webp'],
-    ['name' => 'lumber', 'src' => 'img/lumber.webp'],
-    ['name' => 'volunteer', 'src' => 'img/volunteer.webp'],
-    ['name' => 'wind', 'src' => 'img/wind.webp'],
-]
+    if ($_SESSION['user_role'] == "admin") {
+        $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users ORDER BY article_id DESC ");
+    } else if ($_SESSION['user_role'] == "editeur") {
+        $user_id = $_SESSION['user_id'];
+        $req = $db->prepare("SELECT * FROM articles NATURAL JOIN users WHERE user_id=$user_id ORDER BY article_id DESC ");
+    }
+    $response = $req->execute();
+    $articles = $req->fetchAll();
+
+
+    $pictures = [
+        ['name' => 'tree', 'src' => 'img/tree.webp'],
+        ['name' => 'drop-of-water', 'src' => 'img/drop-of-water.webp'],
+        ['name' => 'leaf', 'src' => 'img/leaf.webp'],
+        ['name' => 'lightbulb', 'src' => 'img/lightbulb.webp'],
+        ['name' => 'lumber', 'src' => 'img/lumber.webp'],
+        ['name' => 'volunteer', 'src' => 'img/volunteer.webp'],
+        ['name' => 'wind', 'src' => 'img/wind.webp'],
+    ]
 ?>
     <section class="mt-5 pt-5">
         <div class="container">

@@ -6,10 +6,12 @@
         header("location:./accueil"); 
     }else{
         $article_id=$_GET['article_id'];
-        $req= "DELETE FROM articles WHERE article_id=$article_id";
-        $execution=$db->prepare($req);
+        $sql= "DELETE FROM articles WHERE article_id=:article_id";
+        $execution=$db->prepare($sql);
+        $execution->bindValue('article_id', $article_id, PDO::PARAM_INT);
         $execution->execute();
         header("Location:./monespace");
+        
     }
 
 ?>

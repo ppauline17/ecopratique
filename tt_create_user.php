@@ -11,7 +11,8 @@
         $password = $donnees->password;
         
         // requete select pour savoir si l'email saisi correspond à un utililsateur présent dans la db
-        $select=$db->prepare("SELECT * FROM users WHERE email = :email");
+        $sql_select = "SELECT * FROM users WHERE email = :email";
+        $select=$db->prepare($sql_select);
         $select->bindValue('email', $email, PDO::PARAM_STR);
         $select->execute();
         $result=$select->fetch(PDO::FETCH_ASSOC);
@@ -26,7 +27,8 @@
                 // hash du password
                 $password_hash=password_hash($password, PASSWORD_BCRYPT);
                 // requete sql
-                $insert=$db->prepare("INSERT INTO users (firstname, email, password, role, user_created_date) VALUES (:firstname, :email, :password, :role, :user_created_date)");
+                $sql_insert = "INSERT INTO users (firstname, email, password, role, user_created_date) VALUES (:firstname, :email, :password, :role, :user_created_date)";
+                $insert=$db->prepare($sql_insert);
                 $insert->bindValue('firstname', $firstname, PDO::PARAM_STR);
                 $insert->bindValue('email', $email, PDO::PARAM_STR);
                 $insert->bindValue('password', $password_hash, PDO::PARAM_STR);
@@ -40,4 +42,5 @@
         }      
         // on renvoie la réponse 
         echo json_encode($reponse);
+
 ?>

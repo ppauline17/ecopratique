@@ -8,7 +8,6 @@
         $req->bindValue('user_id', $_SESSION['user_id'], PDO::PARAM_STR);
         $req->execute();
         $user=$req->fetch(PDO::FETCH_ASSOC);
-    }
 ?>
 
     <section class="mt-5 pt-5">
@@ -163,5 +162,8 @@
         }
     }
 </script>
-</body>
+
+<?php
+    }
+?>
 
