@@ -27,7 +27,7 @@
         $headers = array(
                 'MIME-Version' => '1.0',
                 'Content-type' => 'text/html;charset=UTF-8',
-                'From' => "ppasquier@alwaysdata.net",
+                'From' => $from_email,
                 'Reply-To' => $email
         );
 
