@@ -24,7 +24,7 @@ if (empty($_SESSION['user_id'])) {
                 <div class="col-md-3">
                     <!-- bouton Créer article -->
                     <a href="creer/article"><button class="btn btn-green" data-bs-toggle="modal" data-bs-target="#modalCreate" title="Créer un article">
-                        <?php require("icons/plus.php"); ?>Créer un article
+                        <?php require("icons/plus.php"); ?><span class="ms-2">Créer un article</span>
                     </button></a>
                 </div>
             </div>
@@ -54,7 +54,12 @@ if (empty($_SESSION['user_id'])) {
                     ?>
                             <tr>
                                 <td class="col-2 col-lg-1">
-                                    <img class="img-fluid" src="<?= $article['picture']?>" alt="image de l'article <?= $article['title']?>">
+                                    <picture class="w-100">
+                                    <!-- Source WebP pour les navigateurs compatibles -->
+                                        <source srcset="<?= $article['picture'] ?>.webp" type="image/webp" class="img-fluid">
+                                        <!-- Source JPG pour les navigateurs non compatibles -->
+                                        <img src="<?= $article['picture'] ?>.jpg" alt="image <?=$article['picture']?>" class="img-fluid">
+                                    </picture>
                                 </td>
                                 <td class="col-2"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalVoir<?=$article['article_id']?>" title="Voir <?=$article['title']?>"><?= $article['title'] ?></a></th>
                                 <td class="col-4"><?= $content ?></td>
@@ -128,7 +133,12 @@ if (empty($_SESSION['user_id'])) {
                                                     <div class="col-3">
                                                         <input type="radio" class="btn-check" value="<?=$picture['src']?>" name="picture" id="update-<?=$picture['name']?>-<?=$article['article_id']?>" autocomplete="off" <?=$checked?>>
                                                         <label class="btn" for="update-<?=$picture['name']?>-<?=$article['article_id']?>">
-                                                            <img src="<?=$picture['src']?>" alt="" class="img-fluid">
+                                                            <picture class="w-100">
+                                                                <!-- Source WebP pour les navigateurs compatibles -->
+                                                                <source srcset="<?= $picture['src'] ?>.webp" type="image/webp" class="img-fluid">
+                                                                <!-- Source JPG pour les navigateurs non compatibles -->
+                                                                <img src="<?= $picture['src'] ?>.jpg" alt="image <?=$picture['src']?>" class="img-fluid">
+                                                            </picture>
                                                         </label>
                                                     </div>
                                                     <?php

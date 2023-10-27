@@ -46,7 +46,7 @@ if (!empty($_SESSION['user_id'])) {
             <?php
                 }else{
             ?>
-                <span class="navbar-text dropdown">
+                <span class="navbar-text dropstart">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <?=$firstname?>
                     </a>

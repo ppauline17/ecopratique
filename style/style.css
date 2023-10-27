@@ -38,7 +38,7 @@ body{
     color: #3A4A40;
 }
 .bg-img{
-    background-image: url("../img/nature.webp");
+    background-image: url("../img/nature.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -92,7 +92,7 @@ body{
 
 .parallax{
     height: 500px;
-    background-image: url("../img/environment.webp");
+    background-image: url("../img/environment.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

@@ -35,7 +35,12 @@ if (empty($_SESSION['user_id'])) {
                         <div class="col-3">
                             <input type="radio" class="btn-check" value="<?=$picture['src']?>" name="picture" id="<?=$picture['name']?>" autocomplete="off" <?php if($firstPicture){echo'checked'; $firstPicture=false;}?>>
                             <label class="btn" for="<?=$picture['name']?>">
-                                <img src="<?=$picture['src']?>" alt="" class="img-fluid">
+                                <picture class="w-100">
+                                <!-- Source WebP pour les navigateurs compatibles -->
+                                    <source srcset="<?= $picture['src'] ?>.webp" type="image/webp" class="img-fluid">
+                                    <!-- Source JPG pour les navigateurs non compatibles -->
+                                    <img src="<?= $picture['src'] ?>.jpg" alt="Description de l'image" class="img-fluid">
+                                </picture>
                             </label>
                         </div>
                         <?php

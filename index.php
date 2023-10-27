@@ -16,7 +16,12 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
                 <h2>OF OUR <span class="bold-text">PLANET</span></h2>
             </div>
             <div class="col-md-4">
-                <img class="rounded-5 img-tree shadow" src="img/tree.webp" alt="">
+                <picture class="w-100">
+                    <!-- Source WebP pour les navigateurs compatibles -->
+                    <source srcset="img/tree.webp" type="image/webp" class="rounded-5 img-tree shadow">
+                    <!-- Source JPG pour les navigateurs non compatibles -->
+                    <img src="img/tree.jpg" alt="Description de l'image" class="rounded-5 img-tree shadow">
+                </picture>
             </div>
         </div>
     </div>
@@ -67,7 +72,12 @@ $articles = $req->fetchAll(PDO::FETCH_ASSOC);
                 <div class="card border-0 shadow">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="<?= $article['picture'] ?>" class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
+                            <picture class="w-100">
+                            <!-- Source WebP pour les navigateurs compatibles -->
+                                <source srcset="<?= $article['picture'] ?>.webp" type="image/webp" class="img-fluid rounded-start h-100 object-fit-cover">
+                                <!-- Source JPG pour les navigateurs non compatibles -->
+                                <img src="<?= $article['picture'] ?>.jpg" alt="image <?=$article['picture']?>" class="img-fluid rounded-start h-100 object-fit-cover">
+                            </picture>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body p-4">
