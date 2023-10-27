@@ -4,6 +4,10 @@ ErrorDocument 404 https://ppasquier.alwaysdata.net/ecopratique/404.php
 
 RewriteRule ^accueil$ ./index.php
 RewriteRule ^monespace$ ./page_administration.php
+RewriteRule ^creer/article$ ./page_create_article.php
 RewriteRule ^compte$ ./page_account.php
 RewriteRule ^connexion$ ./page_connect.php
 RewriteRule ^inscription$ ./page_create_account.php
+RewriteRule ^forget$ ./page_forget_password.php
+RewriteRule ^reinitialiser//$ ./page_forget_password.php
+RewriteRule ^reinitialiser/([0-9]+)/([a-z0-9]+)$ ./page_reset_password.php?user_id=$1&token=$2 [L]

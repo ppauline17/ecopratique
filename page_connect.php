@@ -6,6 +6,7 @@ require_once("_header.php");
         <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xxl-4 offset-xxl-4">
             <div class="card bg-white rounded shadow mb-3 p-5">
                 <h2 class="mb-3">Se connecter</h2>
+                <!-- Email -->
                 <div class="mb-3 required-input">
                     <div class="form-floating">
                         <input type="email" class="form-control" id="email" placeholder="email@email.fr">
@@ -13,6 +14,7 @@ require_once("_header.php");
                     </div>
                     <div class="text-danger d-none error-message" id="email-error"></div>
                 </div>
+                <!-- Password -->
                 <div class="mb-3 required-input">
                     <div class="input-group">
                         <div class="form-floating">
@@ -26,9 +28,10 @@ require_once("_header.php");
                     </div>
                     <div class="text-danger d-none error-message"></div>
                 </div>
+                <!-- Error msg -->
                 <div class="text-danger d-none" id="error-message">Identifiant et/ou mot de passe incorrect(s)</div>
                 <button class="btn btn-green mb-3" onclick="checkForm()">Valider</button>
-                <!-- <p class="underline-hover">Mot de passe oublié ?</p> -->
+                <a href="./forget" class="text-decoration-none"><p class="underline-hover">Mot de passe oublié ?</p></a>
             </div>
         </div>
         <div class="col-md-4 offset-md-4">
@@ -43,14 +46,11 @@ require_once("_header.php");
 <script src="scripts/connexion.js"></script>
 <script>
     function checkForm() {
-    isValidEmail();
-    requiredInput();
+        isValidEmail();
+        requiredInput();
 
-    if (isValidEmail() && requiredInput()) {
-        connexion();
+        if (isValidEmail() && requiredInput()) {
+            connexion();
+        }
     }
-}
 </script>
-</body>
-
-</html>

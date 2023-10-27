@@ -27,6 +27,15 @@ if (!empty($_SESSION['user_id'])) {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="./accueil">Accueil</a>
                     </li>
+            <?php
+                if (!empty($_SESSION['user_id'])) {
+            ?>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./monespace">Mes articles</a>
+                    </li>
+            <?php
+                }
+            ?>
                 </ul>
             <?php
                 if (empty($_SESSION['user_id'])) {
