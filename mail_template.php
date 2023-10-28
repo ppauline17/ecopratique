@@ -39,7 +39,7 @@
                     <p class="text-center">Vous avez oublié votre mot de passe ?</p>
                     <p class="text-center">Cliquez sur ce bouton pour choisir un nouveau mot de passe</p>
                     <div class="row">
-                        <a href="https://ppasquier.alwaysdata.net/ecopratique/reinitialiser/<?=$user_id?>/<?=$token?>" class="col-6 offset-3"><button class="btn btn-green w-100">Réinitialiser mon mot de passe</button></a>
+                        <a href="https://pauline-pasquier-dev.fr/ecopratique/reinitialiser/<?=$user_id?>/<?=$token?>" class="col-6 offset-3"><button class="btn btn-green w-100">Réinitialiser mon mot de passe</button></a>
                     </div>
                     
                 </div>
