@@ -11,15 +11,6 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="scripts/bootstrap.bundle.min.js"></script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RW6XH21J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z5RW6XH21J');
-</script>
 <?php
     session_start();
     require_once("db_connect.php");
